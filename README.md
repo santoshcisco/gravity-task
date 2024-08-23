@@ -1,20 +1,25 @@
 # Gravity Assignment
 
-# KEY POINTS
+# Key Points
 ============
-* We should use Jenkins credentials plugin to store sensitive info like SSH or API keys securely.
-* We should use AWS Secrets Manager or Parameter Store for sensitive data within the Terraform configuration.
-* We should use an S3 bucket with state locking enabled using DynamoDB.
 
+* Use the Jenkins credentials plugin to store sensitive information, such as SSH keys or API keys, securely.
+* Utilize AWS Secrets Manager or Parameter Store to manage sensitive data within the Terraform configuration.
+* Store Terraform state in an S3 bucket with state locking enabled using DynamoDB for consistency and safety.
 
-# Project directory "gravity-task"
+## Project Directory: "gravity-task"
 
-# "infra"directory for deploy the resources on AWS CLOUD
+* The `infra` directory contains the Terraform scripts for deploying resources on AWS Cloud.
 
-# Once spinup the infra then we Trigger the Jenkins-CICD-job using Jenkinfile, once we configured this file on jenkins server. 
+## Instructions
 
-# This Jenkinsfile Checkout the source code, Build and Test with Maven. 
-  If the Maven test is succesful then only deploy into the EC2 instance.
+1. After setting up the infrastructure, trigger the Jenkins CI/CD job using the Jenkinsfile. Ensure the Jenkinsfile is properly configured on the Jenkins server.
+2. The Jenkinsfile will:
+   * Checkout the source code.
+   * Build and test the application using Maven.
+   * Deploy to the EC2 instance only if the Maven tests are successful.
 
-# Integrated Cloudwatch to Monitor the instance's CPU, Memory, and disk usage.
-  If CPU usage exceeds 80%, the alert will notify via email 
+## Monitoring and Alerts
+
+* CloudWatch is integrated to monitor the EC2 instance's CPU, memory, and disk usage.
+* If CPU usage exceeds 80%, an alert will be sent via email to notify the relevant personnel.
