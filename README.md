@@ -1,6 +1,4 @@
 # Gravity Assignment
-#  Updated and added
-# New task added
 
 # Key Points
 ============
