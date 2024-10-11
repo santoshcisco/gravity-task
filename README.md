@@ -22,4 +22,6 @@
 ## Monitoring and Alerts
 
 * CloudWatch is integrated to monitor the EC2 instance's CPU, memory, and disk usage.
-* If CPU usage exceeds 80%, an alert will be sent via email to notify the relevant personnel.
+* 
+# Added Signing key
+If CPU usage exceeds 80%, an alert will be sent via email to notify the relevant personnel.
